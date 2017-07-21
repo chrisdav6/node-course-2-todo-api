@@ -11,8 +11,8 @@ MongoClient.connect("mongodb://localhost/TodoApp", function(err, db) {
   //Enter a new Todo
   
   // db.collection("Todos").insertOne({
-  //   text: "Something to do",
-  //   completed: false
+  //   text: "Go to store",
+  //   completed: true
   // }, function(err, result){
   //   if(err){
   //     return console.log("Unable to insert Todo", err);
@@ -24,7 +24,7 @@ MongoClient.connect("mongodb://localhost/TodoApp", function(err, db) {
   //Enter a new User
   
   // db.collection("Users").insertOne({
-  //   name: "Chris",
+  //   name: "Colleen",
   //   age: 40,
   //   location: "Albany, NY"
   // }, function(err, result){

@@ -8,12 +8,22 @@ MongoClient.connect("mongodb://localhost/TodoApp", function(err, db) {
   console.log("Connected to MongoDB");
   
   //Find Data in Mongo Database
-  db.collection("Users").find({name: "Chris"}).toArray().then((docs) => {
+  
+  //Find users with name Chris
+  db.collection("Users").find().toArray().then((docs) => {
     console.log("Users");
     console.log(JSON.stringify(docs, undefined, 2));
   }, (err) => {
     console.log(err);
   });
+  
+  //Find All Todos
+  // db.collection("Todos").find().toArray().then((docs) => {
+  //   console.log("Todos");
+  //   console.log(JSON.stringify(docs, undefined, 2));
+  // }, (err) => {
+  //   console.log(err);
+  // });
   
   
   db.close(function() {
