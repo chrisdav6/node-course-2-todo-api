@@ -15,6 +15,15 @@ app.get("/", function(req, res) {
   res.send("Home");
 });
 
+//Get Todos - GET
+app.get("/todos", (req, res) => {
+  Todo.find().then((todos) => {
+    res.send({todos});
+  }, (error) => {
+    res.status(400).send(error);
+  });
+});
+
 //Post Todo - POST
 app.post("/todos", (req, res) => {
   var todo = new Todo({
