@@ -16,7 +16,7 @@ app.get("/", function(req, res) {
 });
 
 //Post Todo - POST
-app.post("/todos", function(req, res) {
+app.post("/todos", (req, res) => {
   var todo = new Todo({
     text: req.body.text
   });
@@ -32,3 +32,7 @@ app.post("/todos", function(req, res) {
 app.listen(process.env.PORT, process.env.IP, function() {
   console.log("App Started!");
 });
+
+module.exports = {
+  app: app
+};
