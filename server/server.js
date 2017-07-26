@@ -64,7 +64,7 @@ app.delete("/todos/:id", (req, res) => {
     if(!todo){
       return res.status(404).send("Todo not found");
     }
-    res.send(todo);
+    res.send({todo});
   }, (error) => {
     res.status(400).send();
   });
