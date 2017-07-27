@@ -1,4 +1,4 @@
-require("./config/config.js");
+require("./config/config");
 var _ = require("lodash");
 var express = require("express");
 var bodyParser = require("body-parser");
@@ -9,7 +9,6 @@ var {User} = require("./models/user.js");
 var {ObjectID} = require("mongodb");
 
 var app = express();
-var port = process.env.PORT;
 
 app.use(bodyParser.json());
 app.set("view engine", "ejs");
@@ -102,7 +101,7 @@ app.patch("/todos/:id", (req, res) => {
 });
 
 //Server Start
-app.listen(port, process.env.IP, function() {
+app.listen(process.env.PORT, process.env.IP, function() {
   console.log("App Started!");
 });
 
